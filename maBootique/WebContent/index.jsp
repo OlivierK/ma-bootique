@@ -43,7 +43,7 @@
 			<h1>Menu</h1>
 			<ul>
 				<li><a href="">Accueil</a></li>
-				<li><a onClick='JavaScript:envoieRequete("Categorie","centre")'>Catégories</a></li>
+				<li><a onClick='JavaScript:envoieRequete("Categorie","centre")'>Catégoriesss</a></li>
 				<li><a onClick='JavaScript:envoieRequete("Panier","centre")'>Mon panier</a></li>
 			</ul>
 
