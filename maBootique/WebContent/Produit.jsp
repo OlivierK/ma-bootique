@@ -25,7 +25,7 @@
 	<tr>
 		<td><%=aProd.getLibelle()%></td>
 		<td width="50px"></td>
-		<td><a href="<%=request.getContextPath() + "/AjoutPanierServlet"%>">Ajouter
+		<td><a onClick='JavaScript:envoieRequete("AjoutPanierServlet","centre")'>Ajouter
 		au panier</a></td>
 	</tr>
 	<%

@@ -26,7 +26,6 @@ public class AjoutPanierServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -58,6 +57,6 @@ public class AjoutPanierServlet extends HttpServlet {
 			
 		HttpSession session = request.getSession(true);		  
 		session.setAttribute("id",list);	
-		request.getRequestDispatcher("PanierServlet").forward(request, response);
+		request.getRequestDispatcher("Panier").forward(request, response);
 	}
 }

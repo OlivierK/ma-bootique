@@ -47,6 +47,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>PanierServlet</servlet-name>
-    <url-pattern>/PanierServlet</url-pattern>
+    <url-pattern>/Panier</url-pattern>
   </servlet-mapping>
 </web-app>

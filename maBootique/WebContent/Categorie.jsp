@@ -15,7 +15,6 @@
 <br><h2>Catégories</h2>
 <%
 Collection<Categorie> liste=(Collection<Categorie>)request.getAttribute("listeCat");
-	
 	if (liste != null){
 		Iterator<Categorie> it = liste.iterator();
 		while(it.hasNext()){
