@@ -37,7 +37,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>AjoutPanierServlet</servlet-name>
-    <url-pattern>/AjoutPanierServlet</url-pattern>
+    <url-pattern>/AjoutPanier</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

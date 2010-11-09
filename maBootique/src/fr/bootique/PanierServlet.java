@@ -4,11 +4,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 
 import fr.modelBootique.Produit;
 
@@ -30,7 +33,7 @@ public class PanierServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		getListeProduitsPanier(request,response);
+		afficherProduitsPanier(request,response);
 	}
 
 	/**
@@ -40,15 +43,8 @@ public class PanierServlet extends HttpServlet {
 		doGet(request,response);
 	}
 	
-	protected void getListeProduitsPanier(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(true);		  
-		// Recupere l'age de l'utilisateur 
-		ArrayList<Produit> list = (ArrayList<Produit>)session.getAttribute("id");
-		request.setAttribute("ProdPanier", list);
+	protected void afficherProduitsPanier(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.getRequestDispatcher("Panier.jsp").forward(request, response);
-
-
-		
 	}
 
 }

@@ -10,4 +10,5 @@ import fr.modelBootique.Produit;
 public interface AccesCatalogueBeanRemote {
 	public ArrayList<Categorie> getListCategories();	
 	public ArrayList<Produit> getListProduits(int cat);
+	public Produit getProduit(int idProd);
 }

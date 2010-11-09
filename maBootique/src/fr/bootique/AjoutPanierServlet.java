@@ -1,14 +1,16 @@
 package fr.bootique;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Vector;
 
 import javax.naming.InitialContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
 
 import fr.ejbBootique.AccesCatalogueBeanRemote;
 import fr.modelBootique.Produit;
@@ -18,14 +20,14 @@ import fr.modelBootique.Produit;
  */
 public class AjoutPanierServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public AjoutPanierServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public AjoutPanierServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -39,24 +41,26 @@ public class AjoutPanierServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request,response);
 	}
-	
+
 	protected void ajouterProduit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		
-		ArrayList<Produit> list = null;
+		int idProd=Integer.parseInt(request.getParameter("idProd"));
+		Produit aProd=null;
 		try{
 			InitialContext jndi = new InitialContext();
 			AccesCatalogueBeanRemote remote=(AccesCatalogueBeanRemote)jndi.lookup("BootiqueJNDI/remote");
-			list=remote.getListProduits(Integer.parseInt(request.getParameter("cat")));
+			aProd=remote.getProduit(idProd);
 		}
-		
-			catch(Exception e){
+
+		catch(Exception e){
 			e.printStackTrace();
 		}
-			
-			
-		HttpSession session = request.getSession(true);		  
-		session.setAttribute("id",list);	
-		request.getRequestDispatcher("Panier").forward(request, response);
+		HttpSession session=request.getSession(true);
+		Vector<Produit> list=(Vector<Produit>) session.getAttribute("panier");
+		if(list==null)
+			list=new Vector<Produit>();
+		list.add(aProd);
+		session.setAttribute("panier", list);
+		request.getRequestDispatcher("Panier.jsp").forward(request, response);
 	}
 }

@@ -1,5 +1,7 @@
 package fr.modelBootique;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,8 +10,12 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(schema="boutique", name="produitss")
-public class Produit {
+@Table(schema="boutique", name="produits")
+public class Produit implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1205585966433878239L;
 	private int id;
 	private int categorie;
 	private String libelle;

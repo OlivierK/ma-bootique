@@ -25,7 +25,7 @@
 	<tr>
 		<td><%=aProd.getLibelle()%></td>
 		<td width="50px"></td>
-		<td><a onClick='JavaScript:envoieRequete("AjoutPanierServlet","centre")'>Ajouter
+		<td><a onClick='JavaScript:envoieRequete("AjoutPanier?idProd=<%=aProd.getId()%>","centre")'>Ajouter
 		au panier</a></td>
 	</tr>
 	<%
