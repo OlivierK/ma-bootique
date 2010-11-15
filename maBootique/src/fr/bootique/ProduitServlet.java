@@ -45,7 +45,7 @@ public class ProduitServlet extends HttpServlet {
 		ArrayList<Produit> list = null;
 		try{
 			InitialContext jndi = new InitialContext();
-			AccesCatalogueBeanRemote remote=(AccesCatalogueBeanRemote)jndi.lookup("BootiqueJNDI/remote");
+			AccesCatalogueBeanRemote remote=(AccesCatalogueBeanRemote)jndi.lookup("MaBootiqueEAR/BootiqueJNDI/remote");
 			list=remote.getListProduits(Integer.parseInt(request.getParameter("cat")));
 		}
 		

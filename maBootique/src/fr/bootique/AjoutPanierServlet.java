@@ -48,7 +48,7 @@ public class AjoutPanierServlet extends HttpServlet {
 		Produit aProd=null;
 		try{
 			InitialContext jndi = new InitialContext();
-			AccesCatalogueBeanRemote remote=(AccesCatalogueBeanRemote)jndi.lookup("BootiqueJNDI/remote");
+			AccesCatalogueBeanRemote remote=(AccesCatalogueBeanRemote)jndi.lookup("MaBootiqueEAR/BootiqueJNDI/remote");
 			aProd=remote.getProduit(idProd);
 		}
 
