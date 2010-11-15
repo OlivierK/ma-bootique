@@ -9,24 +9,42 @@
 <title>Mon panier</title>
 </head>
 <body>
-
+<h1>Mon panier</h1><br />
 <%
-
 Collection<Produit> ProduitPanier = (Collection<Produit>) session.getAttribute("panier");
 
 if (ProduitPanier != null){
 	Iterator<Produit> it = ProduitPanier.iterator();
-	while(it.hasNext()){
+	
+	
+	
+		while(it.hasNext()){
 		Produit aProd = it.next();
 		%>
-<%=aProd.getLibelle()%><%=aProd.getPrix()%>
+
+<div id="panier" class="item">
+<table widht="100%">
+<tr>
+<td width="50%" align="center">
+<%=aProd.getLibelle()%>
+</td>
+<td width="50%" align="center">
+<%=aProd.getPrix()%>&#8364;
+</td>
+</tr>
+</table>
+</div>
 <%
 	}
+	%><center><a onClick='JavaScript:envoieRequete("Connexion.jsp","centre")'>Valider la commande</a></center>
+
+	<%
 }
 else{
 	%>Le panier est vide.<%
 }
 %>
+
 
 </body>
 </html>

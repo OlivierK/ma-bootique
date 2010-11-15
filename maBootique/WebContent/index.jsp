@@ -11,6 +11,12 @@
 <link rel="stylesheet" type="text/css" href="default.css" media="screen"/>
 <title>Ma Bootique</title>
 <script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript">
+	//<![CDATA[
+		var message = "Login";
+	//]]>
+</script>
+
 </head>
 
 <body>
@@ -47,6 +53,17 @@
 				<li><a onClick='JavaScript:envoieRequete("Categorie","centre")'>Catégories</a></li>
 				<li><a onClick='JavaScript:envoieRequete("Panier","centre")'>Mon panier</a></li>
 
+</ul>
+
+		</div>
+		
+				<div class="login">
+
+			<h1>Login</h1>
+			<ul>
+				<li><input type="text" size="15" name="login" value="Login" onclick="this.value='';" /></li>
+				<li><input type="text" size="15" name="mdp" value="Mot de passe" onclick="this.value='';" /></li>
+				<li><INPUT type=button name="valider" value="Login"></li>
 </ul>
 
 		</div>
