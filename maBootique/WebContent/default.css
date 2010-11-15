@@ -130,7 +130,7 @@ h3{
 .sidenav {
 	background: #EEE;
 	border: 1px solid #E5E5E5;
-	float: left;
+	/*float: left;*/
 	width: 200px;
 }
 .sidenav h1 {
@@ -160,6 +160,41 @@ h3{
 }
 .sidenav li a:hover {
 	color: #111;
+}
+
+/* login left */
+.login h1,.login ul {
+	padding-left: 12px;
+}
+.login {
+	background: #EEE;
+	border: 1px solid #E5E5E5;
+	width: 200px;
+	margin-top: 10px;
+	
+}
+.login h1 {
+	color: #666;
+	font-size: 1.2em;
+	height: 20px;
+	margin-top: 1.2em;
+}
+.login ul {
+	border-top: 1px solid #FAFAFA;
+	background: url(img/bgul.gif) repeat-x;
+	margin: 0;
+	padding: 0;
+}
+.login li {
+	border: 1px solid #FAFAFA;
+	border-top: none;
+	list-style: none;
+	margin: 0;
+	color: #777;
+	display: block;
+	font-size: 0.9em;
+	padding: 3px 6px 3px 14px;
+	text-decoration: none;
 }
 
 /* content */
